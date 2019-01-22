@@ -15,7 +15,7 @@ export default new Router({
     },
     {
       path: "/notes/:id",
-      name: "notes",
+      name: "single.note",
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/SingleNote.vue")
     },

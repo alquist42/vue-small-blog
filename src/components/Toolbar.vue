@@ -14,7 +14,7 @@
         <v-avatar class="while" size="30px"> <span>AG</span> </v-avatar>
       </v-btn>
       <v-list class="pa-0">
-        <v-list-tile ripple="ripple" rel="noopener">
+        <v-list-tile ripple="ripple" rel="noopener" :to="{ name: 'settings' }">
           <v-list-tile-action> <v-icon>settings</v-icon> </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Settings</v-list-tile-title>

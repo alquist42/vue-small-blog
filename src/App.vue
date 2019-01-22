@@ -3,9 +3,7 @@
     <app-toolbar></app-toolbar>
     <app-sidebar></app-sidebar>
     <v-content>
-      <transition>
-        <keep-alive> <router-view></router-view> </keep-alive>
-      </transition>
+      <transition> <router-view></router-view> </transition>
     </v-content>
   </v-app>
 </template>

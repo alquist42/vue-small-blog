@@ -18,11 +18,6 @@
         </v-layout>
         <!-- Top level -->
         <v-list-tile v-else :key="item.text" :to="item.to">
-          <!--<v-list-tile-action v-if="item.icon">-->
-          <!--<v-icon :color="item.iconColor" :small="item.iconSize">{{-->
-          <!--item.icon-->
-          <!--}}</v-icon>-->
-          <!--</v-list-tile-action>-->
           <v-list-tile-content>
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
@@ -36,7 +31,9 @@
         </v-list-tile>
       </template>
     </v-list>
-    <tag-cloud></tag-cloud>
+    <v-sheet class="ml-1 mr-1" color="transparent" height="400" tag="div">
+      <tag-cloud></tag-cloud>
+    </v-sheet>
   </v-navigation-drawer>
 </template>
 

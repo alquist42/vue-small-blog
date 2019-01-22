@@ -16,10 +16,17 @@ mock.onGet("/tags/*").reply(200, {
   tags
 });
 
-mock.onGet("/notes").reply(200, {
-  notes
-});
+// mock.onGet("/notes").reply(200, {
+//   notes
+// });
 
-mock.onGet("/notes/*").reply(200, {
-  notes
+mock.onGet(/\/notes\/*/).reply(config => {
+  const matches = config.url.match(/^\/notes\/([^/]+?)\/?$/);
+  const id = matches ? matches[1] : null;
+  if (!id) {
+    return [200, { notes }];
+  } else {
+    const note = notes.filter(n => n.id === id)[0];
+    return [200, { note }];
+  }
 });

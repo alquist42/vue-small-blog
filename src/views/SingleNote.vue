@@ -1,30 +1,23 @@
 <template>
   <v-container fluid>
     <v-layout row wrap>
-      <v-flex lg6 md8 xs12 offset-md3>
-        <new-note></new-note>
-        <div v-for="post in notes" :key="post.title">
-          <note :note="post"></note>
-        </div>
-      </v-flex>
+      <v-flex lg6 md8 xs12 offset-md3> <note :note="note"></note> </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
 import Note from "@/components/Note";
-import NewNote from "@/components/NewNote";
 import NotesService from "@/services/notes";
 
 export default {
   name: "Notes",
   components: {
-    Note,
-    NewNote
+    Note
   },
   data() {
     return {
-      notes: []
+      note: {}
     };
   },
 
@@ -33,8 +26,9 @@ export default {
       this.drawer = !this.drawer;
     });
 
-    const res = await NotesService.all();
-    this.notes = res.notes;
+    const res = await NotesService.one(this.$route.params.id);
+    console.log(this.$route.params.id, res);
+    this.note = res.note;
   },
 
   methods: {}
