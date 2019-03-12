@@ -1,6 +1,7 @@
-pipeline:
-  
-  install:
+kind: pipeline
+ 
+steps: 
+  - name: install
     image: node:latest
     commands:
       - node -v
@@ -9,9 +10,15 @@ pipeline:
       - yarn config set cache-folder .yarn-cache
       - yarn install --pure-lockfile
 
-  build:
+  - name: build
     image: node:latest
     group: testing
     commands:
       - yarn build
+      
+trigger:
+  branch:
+  - master
+  event:
+  - push
      
