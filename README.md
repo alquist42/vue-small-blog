@@ -1,3 +1,5 @@
+[![Build Status](http://drone.expodium.net:880/api/badges/alquist42/vue-small-blog/status.svg)](http://drone.expodium.net:880/alquist42/vue-small-blog)
+
 # blog
 
 ## Project setup
