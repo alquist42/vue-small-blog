@@ -1,0 +1,17 @@
+pipeline:
+  
+  install:
+    image: node:latest
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install --pure-lockfile
+
+  build:
+    image: node:latest
+    group: testing
+    commands:
+      - yarn build
+     
